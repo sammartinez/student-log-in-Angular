@@ -21,7 +21,7 @@
 </ul>
 
 <h3>Left Early</h3>
-<p ng-show="!here.length">No students have left early today.</p>
+<p ng-show="!here.length"></p>
 <ul>
     <li ng-repeat="student in notHere = (students | filter: {signedIn: true, signedOut: true})">
         {{ student.name }}
