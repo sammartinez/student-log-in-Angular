@@ -2,29 +2,20 @@
     <a ui-sref="home"><button type="submit" class="btn btn-warning">Home</button></a>
 </div>
 
-<div class="row">
-       <div class="col-md-6" >
-         <p ng-show="!areNotHere.length">
+<h1>Who's Here Today</h1>
 
-         <h2>Students Not Here</h2>
-         <ul>
-           <li ng-repeat="student in students = (students | filter:{here: false, notHere: true})">
-           {{student.name}}
-           </li>
-         </ul>
-         </div>
-       </div>
+<h3>Currently Signed In</h3>
+<p ng-show="!here.length">Current</p>
+<ul>
+    <li ng-repeat="student in here = (students | filter: {signedIn: true, signedOut: false})">
+        {{ student.name }}
+    </li>
+</ul>
 
-
-       <div class="col-md-6">
-         <div ng-show="!areHere.length">
-
-         <h2>Students Here</h2>
-         <ul>
-           <li ng-repeat="item in students = (students | filter:{here: true, notHere: false})">
-           {{item.name}}
-           </li>
-         </ul>
-         </div>
-    </div>
-</div>
+<h3>Currently Not Here</h3>
+<p ng-show="!notHere.length">Current</p>
+<ul>
+    <li ng-repeat="student in notHere = (students | filter: {signedIn: false, signedOut: true})">
+        {{ student.name }}
+    </li>
+</ul>
