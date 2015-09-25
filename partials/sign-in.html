@@ -2,17 +2,15 @@
     <a ui-sref="home"><button type="submit" class="btn btn-warning">Home</button></a>
 </div>
 
-<div class="container" ng-controller="StudentsCtrl">
-<h1>Sign In Sheet</h1>
-  <ul>
-    <li ng-repeat="student in students">
-      {{ student.name }}
-      <span ng-show="!student.here && !student.notHere">
-        <button type="button" class="btn btn-default" ng-click="here(student)">Sign In</button>
-      </span>
-      <span ng-show="student.here && !student.notHere">
-        <button type="button" class="btn btn-default" ng-click="notHere(student)">Sign Out</button>
-      </span>
-    </li>
-  </ul>
-</div>
+<h1>Sign In</h1>
+<ul>
+  <li ng-repeat="student in students | orderBy: name">
+    {{ student.name }}
+    <span ng-show="!student.signedIn && !student.signedOut">
+      <button type="button" class="btn btn-default" ng-click="signIn(student)">Sign in</button>
+    </span>
+    <span ng-show="student.signedIn && !student.signedOut">
+      <button type="button" class="btn btn-default" ng-click="signOut(student)">Sign out</button>
+    </span>
+  </li>
+</ul>

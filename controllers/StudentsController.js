@@ -4,11 +4,11 @@ studentLogin.controller('StudentsCtrl', function StudentsCtrl($scope, StudentsFa
     $scope.StudentsFactory = StudentsFactory;
 
     //Methods
-    $scope.studentsHere = function(student) {
-        student.areHere = true;
+    $scope.signIn = function(student) {
+        student.signedIn = true;
     };
 
-    $scope.studentsNotHere = function(student) {
-      student.areNotHere = true;
+    $scope.signOut = function(student) {
+      student.signedOut = true;
     };
 });
