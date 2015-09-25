@@ -6,7 +6,7 @@ studentLogin.config(function($stateProvider, $urlRouterProvider) {
         url: "",
         templateUrl: "partials/home.html"
     });
-    
+
     //Path for signing in as a student
     $stateProvider.state('sign-in', {
         url:"/sign-in",
@@ -16,6 +16,7 @@ studentLogin.config(function($stateProvider, $urlRouterProvider) {
     //Path for teacher to see who is here.
     $stateProvider.state('whos-here', {
         url:"/whos-here",
-        templateUrl: "partials/whos-here.html"
+        templateUrl: "partials/whos-here.html",
+        controller:"StudentsCtrl"
     });
 });

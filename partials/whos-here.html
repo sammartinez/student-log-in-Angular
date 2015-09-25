@@ -1,27 +1,24 @@
 <div class="nav">
     <a ui-sref="home"><button type="submit" class="btn btn-warning">Home</button></a>
 </div>
-<div class="row" ng-controller="presence">
+
+<div class="row">
        <div class="col-md-6" ng-show="studentsNotHere.length">
          <h2>Students Not Here</h2>
-         <!--Hard coded for now  -->
-         <p>Jose Torres</p>
-         <p>Casey Heitz</p>
-         <p>Chris Swan</p>
          <ul>
-           <li ng-repeat="item in studentsNotHere = (students | filter:{here: false})">
+           <li ng-repeat="item in students">
            {{item.name}}
            </li>
          </ul>
        </div>
 
+
        <div class="col-md-6" ng-show="studentsHere.length">
          <h2>Students Here</h2>
-         <!--Hard coded for now  -->
-         <p>Sam Martinez</p>
-         <p>Charlie Moss</p>
          <ul>
-           <li ng-repeat="item in studentsHere = (students | filter:{here: true})">
+           <li ng-repeat="item in students">
            {{item.name}}
            </li>
          </ul>
+    </div>
+</div>
