@@ -5,25 +5,25 @@
 <h1>Who's Here Today</h1>
 
 <h3>Currently Signed In</h3>
-<p ng-show="!here.length">No one is here yet</p>
+<p ng-show="!areSignedIn.length">No one is here yet</p>
 <ul>
-    <li ng-repeat="student in here = (students | filter: {signedIn: true, signedOut: false})">
+    <li ng-repeat="student in areSignedIn = (students | filter: {signedIn: true, signedOut: false})">
         {{ student.name }}
     </li>
 </ul>
 
 <h3>Currently Not Here</h3>
-<p ng-show="!notHere.length"></p>
+<p ng-show="!areNotSignedIn.length"></p>
 <ul>
-    <li ng-repeat="student in notHere = (students | filter: {signedIn: false, signedOut: false})">
+    <li ng-repeat="student in areNotSignedIn = (students | filter: {signedIn: false, signedOut: false})">
         {{ student.name }}
     </li>
 </ul>
 
 <h3>Left Early</h3>
-<p ng-show="!here.length"></p>
+<p ng-show="!leftEarly.length">No one has left early today.</p>
 <ul>
-    <li ng-repeat="student in notHere = (students | filter: {signedIn: true, signedOut: true})">
+    <li ng-repeat="student in leftEarly = (students | filter: {signedIn: true, signedOut: true})">
         {{ student.name }}
     </li>
 </ul>
