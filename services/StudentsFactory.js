@@ -1,22 +1,27 @@
 studentLogin.factory('StudentsFactory', function StudentsFactory() {
     var factory = {};
+
     factory.students = [
         {
-            name: Phil Ling
+            name: "Sam Smith"
+            signedIn: false,
+            signedOut: false
         },
         {
-            name: Sam Smith
+            name: "Peter Gibson",
+            signedIn: false,
+            signedOut: false
         },
         {
-            name: Peter Gibson
+            name: "John Maze",
+            signedIn: false,
+            signedOut: false
         },
         {
-            name: John Maze
-        },
-        {
-            name: Robert French
+            name: "Robert French",
+            signedIn: false,
+            signedOut: false
         }
-    ];
-
+    ]
     return factory;
 });

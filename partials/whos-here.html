@@ -3,22 +3,28 @@
 </div>
 
 <div class="row">
-       <div class="col-md-6" ng-show="studentsNotHere.length">
+       <div class="col-md-6" >
+         <p ng-show="!areNotHere.length">
+
          <h2>Students Not Here</h2>
          <ul>
-           <li ng-repeat="item in students">
-           {{item.name}}
+           <li ng-repeat="student in students = (students | filter:{here: false, notHere: true})">
+           {{student.name}}
            </li>
          </ul>
+         </div>
        </div>
 
 
-       <div class="col-md-6" ng-show="studentsHere.length">
+       <div class="col-md-6">
+         <div ng-show="!areHere.length">
+
          <h2>Students Here</h2>
          <ul>
-           <li ng-repeat="item in students">
+           <li ng-repeat="item in students = (students | filter:{here: true, notHere: false})">
            {{item.name}}
            </li>
          </ul>
+         </div>
     </div>
 </div>

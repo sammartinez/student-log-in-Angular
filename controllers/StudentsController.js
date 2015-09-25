@@ -1,12 +1,14 @@
 studentLogin.controller('StudentsCtrl', function StudentsCtrl($scope, StudentsFactory) {
+
     $scope.students = StudentsFactory.students;
     $scope.StudentsFactory = StudentsFactory;
 
+    //Methods
     $scope.studentsHere = function(student) {
-        student.here = true;
+        student.areHere = true;
     };
 
     $scope.studentsNotHere = function(student) {
-      student.notHere = true;
+      student.areNotHere = true;
     };
 });

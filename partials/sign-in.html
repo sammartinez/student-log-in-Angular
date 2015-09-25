@@ -1,13 +1,18 @@
 <div class="nav">
     <a ui-sref="home"><button type="submit" class="btn btn-warning">Home</button></a>
 </div>
-<h1>Sign In Sheet</h1>
 
-<div class="form-inline">
-    <!-- Hard coded in for layout. Will remove after functionality is in place.  -->
-    <p><strong>Sam Martinez</strong> <button type="submit" class="btn btn-danger">Sign Out</button></p>
-    <p><strong>Casey Heitz</strong> <button type="submit" class="btn btn-default">Sign In</button></p>
-    <p><strong>Jose Torres</strong> <button type="submit" class="btn btn-default">Sign In</button></p>
-    <p><strong>Charlie Moss</strong> <button type="submit" class="btn btn-danger">Sign Out</button></p>
-    <p><strong>Chris Swan</strong> <button type="submit" class="btn btn-default">Sign In</button></p>
+<div class="container" ng-controller="StudentsCtrl">
+<h1>Sign In Sheet</h1>
+  <ul>
+    <li ng-repeat="student in students">
+      {{ student.name }}
+      <span ng-show="!student.here && !student.notHere">
+        <button type="button" class="btn btn-default" ng-click="here(student)">Sign In</button>
+      </span>
+      <span ng-show="student.here && !student.notHere">
+        <button type="button" class="btn btn-default" ng-click="notHere(student)">Sign Out</button>
+      </span>
+    </li>
+  </ul>
 </div>
